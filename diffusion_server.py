@@ -7,21 +7,21 @@ def process_data():
 
     data = request.json #incoming data
 
-    # expected to recieve {type:_ ; 
-    #                      steps:_; 
-    #                      prompt_word:_ ; 
-    #                      original_image:_}
+    # expected to recieve {type:_ string; 
+    #                      steps:_string; 
+    #                      prompt_word:_ string; 
+    #                      original_image:_string}
 
+    # 1. convert base64 to img
 
-    # noise operation
+    # 2.1 noise operation
 
+    # 2.2 denoise/diffusion operation
 
-    # denoise/diffusion operation
-
-    # new_image = blablablah
+    # 3. new_image = blablablah
     
-    # Customize the response with the extracted name
-    # send back the "new_image"
+    # 4. send back the "new_image"
+
     result = {
         "message": f"Hello."
     }
