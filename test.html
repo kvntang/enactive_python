@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>POST Request Test</title>
+</head>
+<body>
+
+<h1>Test POST Request</h1>
+<button id="sendRequest">Send POST Request</button>
+
+<!-- Display Result -->
+<pre id="responseOutput">Waiting for response...</pre>
+
+<script>
+  document.getElementById('sendRequest').addEventListener('click', async () => {
+    const url = "https://app.unalia.com/api";  // Change to your actual endpoint if needed
+
+    // Request payload
+    const payload = {
+      name: "kevin",
+      secret: "hi"
+    };
+
+    try {
+      // Send POST request
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      // Handle the response
+      const result = await response.json();
+
+      // Display response in the browser
+      document.getElementById("responseOutput").textContent = JSON.stringify(result, null, 2);
+
+      // Log response in the console
+      console.log("Server Response:", result);
+
+    } catch (error) {
+      document.getElementById("responseOutput").textContent = `Error: ${error.message}`;
+      console.error("Error:", error);
+    }
+  });
+</script>
+
+</body>
+</html>
