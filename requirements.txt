@@ -1,0 +1,17 @@
+from flask import Flask, jsonify, request
+import torch
+from diffusers import StableDiffusionPipeline, DDIMScheduler
+from torchvision import transforms
+from PIL import Image
+import numpy as np
+import base64
+from io import BytesIO
+
+python 3.9.12
+pip install torch torchvision
+pip install diffusers
+pip install flask
+pip install Pillow
+pip install numpy
+pip install base64
+pip install io
