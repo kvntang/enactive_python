@@ -78,7 +78,7 @@ class StableDiffusionProcessor:
         self.current_timestep_index = t_index
         return self.image_to_base64(image)
 
-    def denoise(self, steps, prompt_word):
+    def denoise(self, steps, prompt_word=""):
         if steps < 1:
             steps = 1
 
